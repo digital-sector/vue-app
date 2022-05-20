@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,12 +14,13 @@
         <img :src="image">
         <p v-if="inventory > 10">Instock</p>
         <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
-        <button @:click="addToCart">Add to cart</button>
+        <p v-else>Sold Out</p>
+        <button @click="addToCart">Add to cart</button>
         <p v-else>Sold Out</p>
         <ul>
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
-        <div v-for="variant in variants" @mouseover="updateImage(variant.image)" :key="variant.id">{{ variant.color }}</div>
+        <div class="color-circle" :style="{ backgroundColor: variant.color }" v-for="variant in variants" @mouseover="updateImage(variant.image)" :key="variant.id"></div>
     </div>
     <script type="importmap">
         {

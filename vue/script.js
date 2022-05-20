@@ -6,11 +6,11 @@ const app = createApp({
         cart: 0,
         product: 'Skins',
         image: "./imgs/steve.webp",
-        inventory: 0,
+        inventory: 10,
         details: ['50% cotton', '30% wool', '20% polyester'],
         variants: [
-          { id: 2234, color: 'steve', image: './imgs/steve.webp' },
-          { id: 2235, color: 'alex', image: './imgs/alex.webp' }
+          { id: 2234, color: 'green', image: './imgs/steve.webp' },
+          { id: 2235, color: 'blue', image: './imgs/alex.webp' }
         
         ],
       }
