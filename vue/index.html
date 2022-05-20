@@ -8,11 +8,17 @@
 </head>
 <body>
     <div id="app">
+        <p>{{ cart }}</p>
         <h1>{{ product }}</h1>
         <img :src="image">
         <p v-if="inventory > 10">Instock</p>
         <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+        <button @:click="addToCart">Add to cart</button>
         <p v-else>Sold Out</p>
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+        <div v-for="variant in variants" @mouseover="updateImage(variant.image)" :key="variant.id">{{ variant.color }}</div>
     </div>
     <script type="importmap">
         {
