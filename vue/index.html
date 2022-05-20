@@ -9,7 +9,10 @@
 <body>
     <div id="app">
         <h1>{{ product }}</h1>
-        <img v-bind:src="image">
+        <img :src="image">
+        <p v-if="inventory > 10">Instock</p>
+        <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+        <p v-else>Sold Out</p>
     </div>
     <script type="importmap">
         {

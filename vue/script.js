@@ -4,7 +4,8 @@ const app = createApp({
     data() {
       return {
         product: 'Skins',
-        image: "./imgs/steve.webp"
+        image: "./imgs/steve.webp",
+        inventory: 0,
       }
     }
   }).mount('#app')
