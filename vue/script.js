@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 
-createApp({
+const app = createApp({
     data() {
       return {
-        message: 'Hello Vue!!!'
+        product: 'Skins',
+        image: "./imgs/steve.webp"
       }
     }
   }).mount('#app')
