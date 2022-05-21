@@ -11,6 +11,7 @@
     <div id="app">
         <p>{{ cart }}</p>
         <h1>{{ product }}</h1>
+        <h3>{{ title }}</h3>
         <img :src="image">
         <p v-if="inventory > 10">Instock</p>
         <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
@@ -20,7 +21,7 @@
         <ul>
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
-        <div class="color-circle" :style="{ backgroundColor: variant.color }" v-for="variant in variants" @mouseover="updateImage(variant.image)" :key="variant.id"></div>
+        <div class="color-circle" :style="{ backgroundColor: variant.color }" v-for="(variant, index) in variants" @mouseover="updateVariant(index)" :key="variant.id"></div>
     </div>
     <script type="importmap">
         {
